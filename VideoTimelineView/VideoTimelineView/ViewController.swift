@@ -24,8 +24,8 @@ class ViewController: UIViewController, TimelinePlayStatusReceiver {
         
         
         ///Prepare videoTimelineView
-        let asset = AVAsset(url: URL(fileURLWithPath: Bundle.main.path(forResource: "movie", ofType:"mov")!))
-        
+        let asset = AVAsset(url: URL(fileURLWithPath: Bundle.main.path(forResource: "movie", ofType:"mp4")!))
+
         videoTimelineView = VideoTimelineView()
         videoTimelineView.frame = layout().timeline
         videoTimelineView.new(asset:asset)

@@ -418,6 +418,8 @@ class TrimView: UIView {
     
     
     func updateEdgeScroll(_ knob:TrimKnob, strength:CGFloat, position:CGFloat) {
+        
+        print("------updateEdgeScroll:\(strength)------")
         var changed = false
         if edgeScrollStrength != strength {
             edgeScrollStrength = strength
@@ -538,6 +540,8 @@ class TrimKnob:UIView {
         if timelineView!.allTouches.count == 1 && allTouches.count == 1 {
             if dragging == false {
                 startDrag()
+                
+                print("------touchesBegan------")
             }
             evaluateTap = true
         } else {
@@ -581,6 +585,8 @@ class TrimKnob:UIView {
         }
         if dragging {
             endDrag()
+            
+            print("------touchesEnded------")
         }
         
         if evaluateTap && timelineView!.allTouches.count == 0 {
@@ -605,6 +611,8 @@ class TrimKnob:UIView {
         }
         if dragging {
             endDrag()
+            
+            print("------touchesCancelled------")
         }
         evaluateTap = false
     }
